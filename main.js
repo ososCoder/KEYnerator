@@ -11,6 +11,15 @@ const range = document.querySelector('input[type="range"]');
 const generatePass = document.getElementsByClassName('generatePass');
 const copyPass = document.getElementsByClassName('copyPass');
 
-//CHECK DE ELEMENTOS////////////////////////////////////////////////////
+//CHECK DE ELEMENTOS/////////////////////////////////////////////////////
+let array = [];
+
+//hay que comprobar el array solo debe de conterner un único valor de cada fieldset
 for (const radio of radios) {
+  radio.addEventListener('change', () => {
+    if (radio.checked) {
+      array.push(radio.id);
+      console.log(array);
+    }
+  });
 }
