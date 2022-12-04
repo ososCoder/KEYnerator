@@ -20,7 +20,12 @@
           <ul>
             <li>
               <label for="lowercaseLetters">Lowercase</label>
-              <input type="radio" name="letters" id="lowercaseLetters" />
+              <input
+                type="radio"
+                name="letters"
+                id="lowercaseLetters"
+                required
+              />
             </li>
             <li>
               <label for="uppercaseLetters">Uppercase</label>
@@ -29,6 +34,10 @@
             <li>
               <label for="bothLetters">Both</label>
               <input type="radio" name="letters" id="bothLetters" />
+            </li>
+            <li>
+              <label for="noneLetters">None</label>
+              <input type="radio" name="letters" id="noneLetters" />
             </li>
           </ul>
         </fieldset>
@@ -44,19 +53,24 @@
         <fieldset class="characters">
           <legend>Include special characters</legend>
           <p>! ? @ # $ & /</p>
-          <label for="characters">Characters</label>
-          <input type="checkbox" id="characters" />
+          <ul>
+            <li>
+              <label for="characters">Characters</label>
+              <input type="checkbox" id="characters" />
+            </li>
+          </ul>
         </fieldset>
         <fieldset class="length">
           <legend>Password length</legend>
-          <p>(Max length 20 characters )</p>
+          <p>Max length 20 characters</p>
           <input type="range" min="5" max="20" required />
+          <div class="numberCharacters"></div>
         </fieldset>
-        <button>Generate password</button>
+        <button class="generatePass">Generate password</button>
       </form>
       <form class="form2">
         <input type="text" />
-        <button>copy</button>
+        <button class="copyPass">copy</button>
       </form>
     </main>
     <footer>
