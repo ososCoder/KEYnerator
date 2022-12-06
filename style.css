@@ -10,9 +10,10 @@
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  padding: 0.3rem 1rem;
+  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
+  position: relative;
+  background: #6b728e;
 }
 
 /*HEADER*/
@@ -22,15 +23,39 @@ header {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.3rem 1rem;
 }
 
 header > p {
   text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+header > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+header > div > h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.key {
+  height: 2rem;
+  transform: rotate(-45deg);
 }
 
 /*MAIN*/
 main {
   flex-grow: 1;
+  padding: 0.3rem 1rem;
 }
 
 /*form1*/
@@ -42,8 +67,21 @@ main > .form1 {
 }
 
 fieldset {
-  padding: 0.5rem;
-  margin-top: 0.5rem;
+  padding: 1rem 0.5rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background: #404258;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+fieldset > legend {
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 0.2rem 0.5rem;
+  background: #fff;
+  color: #404258;
 }
 
 .letters > ul {
@@ -105,6 +143,9 @@ fieldset {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid #404258;
+  background: linear-gradient(#ffea8a, #ffdb2d, #ffaf33);
 }
 
 /*form2*/
@@ -122,6 +163,10 @@ main > .form2 > input {
   font-family: 'Poppins', sans-serif;
   padding-left: 1rem;
   font-size: 1rem;
+  border-radius: 10px 0 0 10px;
+  border: 2px solid #404258;
+  border-right: none;
+  color: #404258;
 }
 
 main > .form2 > button {
@@ -129,19 +174,39 @@ main > .form2 > button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: none;
-  border: none;
+  background: #404258;
+  border: 2px solid #404258;
   cursor: pointer;
+  border-radius: 0 10px 10px 0;
 }
 
 main > .form2 > button > img {
   height: 2rem;
 }
 
-main > .form2 > button:active {
-  transform: scale(1.1);
-}
 /*footer*/
 footer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  gap: 0.1rem;
+  padding: 0.6rem 0;
+  background: #404258;
+  width: 100%;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+footer > p:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.github {
+  width: 2.4rem;
 }

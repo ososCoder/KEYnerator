@@ -290,24 +290,44 @@ passLength.addEventListener('change', () => {
 });
 
 //COPY PASS/////////////////////////////////////////////////////////////
+// copyPass[0].addEventListener('click', (e) => {
+//   e.preventDefault();
+
+//   //funcion de copiado asincrona
+//   const copyContent = async () => {
+//     try {
+//       const selection = passGenerated.value;
+//       await navigator.clipboard.writeText(selection);
+
+//       //alerts por si no existe una password generada
+//       if (!passGenerated.value) {
+//         alert('Please chose some options to generate a valid key');
+//       } else {
+//         alert('Your new Key has been copied to clipboard');
+//       }
+//     } catch (err) {
+//       console.error('err');
+//     }
+//   };
+//   copyContent();
+// });
+
 copyPass[0].addEventListener('click', (e) => {
   e.preventDefault();
 
-  //funcion de copiado asincrona
-  const copyContent = async () => {
-    try {
-      const selection = passGenerated.value;
-      await navigator.clipboard.writeText(selection);
+  if (!passGenerated.value) {
+    alert('Please chose some options to generate a valid key');
+  } else {
+    passGenerated.select();
+    passGenerated.setSelectionRange(0, 99999);
 
-      //alerts por si no existe una password generada
-      if (!passGenerated.value) {
-        alert('Please chose some options to generate a valid key');
-      } else {
-        alert('Your new Key has been copied to clipboard');
-      }
-    } catch (err) {
-      console.error('err');
-    }
-  };
-  copyContent();
+    document.execCommand('copy'); //for mobile
+    // navigator.clipboard.writeText(passGenerated.value);
+
+    //para evitar que se active teclado en mobile desactivamos y volvemos a activar
+    //el input
+    passGenerated.disabled = true;
+    alert('Your new KEY has been copied to clipboard');
+    passGenerated.disabled = false;
+  }
 });
