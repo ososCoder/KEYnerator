@@ -149,6 +149,9 @@ fieldset > legend {
   border: 2px solid #404258;
   background: linear-gradient(#ffea8a, #ffdb2d, #ffaf33);
 }
+.generatePass:active {
+  scale: 1.02;
+}
 
 /*form2*/
 main > .form2 {
@@ -182,6 +185,9 @@ main > .form2 > button {
   border-radius: 0 10px 10px 0;
 }
 
+main > .form2 > button:active {
+  background: rgb(0, 201, 0);
+}
 main > .form2 > button > img {
   height: 2rem;
 }
